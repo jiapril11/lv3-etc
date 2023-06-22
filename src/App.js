@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import Button from "./components/Button";
+import { FcLikePlaceholder, FcCloseUpMode } from "react-icons/fc";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div style={{ padding: 16 }}>
+        <h1>Button</h1>
+        <div style={{ display: "flex", gap: "10px", marginBottom: "10px" }}>
+          <Button color="primary" size="lg" outline="true">
+            Large Button <FcLikePlaceholder />
+          </Button>
+          <Button color="primary" size="md">
+            Medium Button
+          </Button>
+          <Button color="primary" size="sm">
+            Small Button
+          </Button>
+        </div>
+        <div style={{ display: "flex", gap: "10px" }}>
+          <Button color="negativ" size="lg" outline="true">
+            Large Button <FcCloseUpMode />
+          </Button>
+          <Button color="negativ" size="md">
+            Medium Button
+          </Button>
+          <Button color="negativ" size="sm">
+            Small Button
+          </Button>
+        </div>
+      </div>
+    </>
   );
 }
 
