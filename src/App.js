@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Button from "./components/Button";
 import { FcLikePlaceholder, FcCloseUpMode } from "react-icons/fc";
+import Modals from "./components/Modals";
 
 function App() {
   const [name, setName] = useState("");
@@ -73,6 +74,8 @@ function App() {
             <button type="submit">저장</button>
           </div>
         </form>
+        <hr />
+        <Modals />
       </div>
     </>
   );
