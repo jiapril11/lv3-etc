@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Button from "./components/Button";
 import { FcLikePlaceholder, FcCloseUpMode } from "react-icons/fc";
 import Modals from "./components/Modals";
+import Select from "./components/Select";
 
 function App() {
   const [name, setName] = useState("");
@@ -76,6 +77,8 @@ function App() {
         </form>
         <hr />
         <Modals />
+        <hr />
+        <Select />
       </div>
     </>
   );
