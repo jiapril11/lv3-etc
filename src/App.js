@@ -1,22 +1,10 @@
-import { useEffect, useState } from "react";
 import Button from "./components/Button";
 import { FcLikePlaceholder, FcCloseUpMode } from "react-icons/fc";
 import Modals from "./components/Modals";
 import Select from "./components/Select";
+import Input from "./components/Input";
 
 function App() {
-  const [name, setName] = useState("");
-  const [price, setPrice] = useState("");
-  const [item, setItem] = useState({});
-  const handleSubmitItem = (e) => {
-    e.preventDefault();
-    alert(`{name: '${name}', price: '${price.replace(",", "")}'}`);
-
-    setItem((prev) => ({ ...prev, name, price }));
-    setName("");
-    setPrice("");
-  };
-
   return (
     <>
       <div style={{ padding: 16 }}>
@@ -46,35 +34,7 @@ function App() {
           </div>
         </div>
         <hr />
-        <h1>Input</h1>
-        <form onSubmit={handleSubmitItem}>
-          <div style={{ display: "flex" }}>
-            <div>
-              <label htmlFor="inputName">이름 </label>
-              <input
-                type="text"
-                id="inputName"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-            </div>
-            <div>
-              <label htmlFor="inputPrice">가격 </label>
-              <input
-                type="text"
-                id="inputPrice"
-                value={price}
-                onInput={(e) =>
-                  (e.target.value = e.target.value
-                    .replace(/[^0-9]/g, "")
-                    .replace(/\B(?=(\d{3})+(?!\d))/g, ","))
-                }
-                onChange={(e) => setPrice(e.target.value)}
-              />
-            </div>
-            <button type="submit">저장</button>
-          </div>
-        </form>
+        <Input />
         <hr />
         <Modals />
         <hr />
